@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayurveda | Hair Care</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="skin.css">
+
+<style>
+/* Header */
+.title{
+    flex:1;
+    text-align:center;
+    margin-top: 85px;
+}
+
+.title h1{
+    font-family:"Cinzel Decorative",serif;
+    font-size:35px;
+    color:black;
+    margin-bottom:18px;
+}
+
+.title p{
+    color:#121b17;
+    font-size:17px;
+    margin-bottom: 30px;
+}
+
+/* Cards */
+.cards{
+    width:95%;
+    max-width:1250px;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.card{
+    background:#032e168b;
+    border:1px solid #0a3507;
+    border-radius:22px;
+    padding:35px 28px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:280px;
+    box-shadow:0 10px 25px rgba(18,60,47,.08);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#8fb79a;
+    box-shadow:0 20px 40px rgba(18,60,47,.15);
+}
+
+.card h2{
+    color:#eff1f0;
+    font-size:24px;
+    margin-bottom:15px;
+    text-align:center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.card p{
+    color:#c6dad4;
+    font-size:16px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.card a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    align-self:center;
+    width:auto;
+    padding:10px 20px;
+    background:#123c2f;
+    color:#fff;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.card a:hover{
+    background:#2e8b57;
+    transform:translateY(-2px);
+}
+
+.card a:hover{
+    background:var(--forest);
+    color:#fff;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:
+    url("images/bg.png") center/cover fixed;
+    overflow-x:hidden;
+}
+
+/* Responsive */
+@media(max-width:1200px){
+    .cards{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:500px){
+    .cards{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+    <nav class="navbar">
+
+    <a href="remedies.html" class="logo">
+        <i class="fa-solid fa-leaf"></i>
+        AYURVEDA
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="remedies.html">Home</a></li>
+        <li><a href="health.html">Health Care</a></li>
+        <li><a href="skin.html">Skin Care</a></li>
+        <li><a href="hair.html" class="active">Hair Care</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <button id="voiceBtn" class="voice-btn" title="Voice Assistant">
+    <i class="fa-solid fa-microphone-lines"></i>
+</button>
+<button id="stopVoice" class="voice-btn">
+    <i class="fa-solid fa-stop"></i>
+</button>
+
+<div id="voiceStatus" class="voice-status"></div>
+
+        <div class="profile-menu">
+            <button class="profile-btn" onclick="toggleProfileMenu()">
+                <span class="profile-avatar" id="profileAvatar"></span>
+                <span class="profile-arrow">▼</span>
+            </button>
+
+            <div class="profile-dropdown" id="profileDropdown">
+                <a href="profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    My Profile
+                </a>
+
+                <a href="#" onclick="logout()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="title">
+        <h1>HAIR CARE</h1>
+        <p>Natural Ayurvedic remedies for healthy, strong and beautiful hair.</p>
+    </div>
+
+    <section class="cards">
+    <div class="card">
+        <h2>Dandruff</h2>
+        <p>
+            Ayurvedic remedies that help reduce dandruff, soothe the scalp
+            and maintain a healthy hair care routine naturally.
+        </p>
+        <a href="remedy-pages/page61.html">Explore →</a>
+    </div>
+
+    <div class="card">
+        <h2>Herbal Shampoo</h2>
+        <p>
+            Natural herbal shampoos made from traditional Ayurvedic
+            ingredients to gently cleanse and nourish the hair.
+        </p>
+        <a href="remedy-pages/page62.html">Explore →</a>
+    </div>
+
+    <div class="card">
+        <h2>Restorative Hair Oil</h2>
+        <p>
+            Herbal oils that strengthen hair roots, reduce hair fall
+            and support healthy hair growth.
+        </p>
+        <a href="remedy-pages/page63.html">Explore →</a>
+    </div>
+
+    <div class="card">
+        <h2>Nourishing Hair Oil</h2>
+        <p>
+            Ayurvedic nourishing oils that deeply moisturize the scalp,
+            improve shine and promote soft, healthy hair.
+        </p>
+        <a href="remedy-pages/page64.html">Explore →</a>
+    </div>
+</section>
+
+<script>
+    const stopBtn=document.getElementById("stopVoice");
+
+stopBtn.addEventListener("click",()=>{
+
+    speechSynthesis.cancel();
+
+    recognition.abort();
+
+    voiceStatus.classList.remove("show");
+
+});
+function loadNavbarUser() {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user) return;
+
+    const words = user.name.trim().split(" ");
+
+    let initials = "";
+
+    words.forEach(word => {
+        initials += word[0];
+    });
+
+    document.getElementById("profileAvatar").innerText =
+        initials.toUpperCase();
+
+}
+function toggleProfileMenu(){
+    const menu=document.getElementById("profileDropdown");
+    menu.style.display = menu.style.display==="block" ? "none" : "block";
+}
+
+window.onclick=function(e){
+    if(!e.target.closest(".profile-menu")){
+        document.getElementById("profileDropdown").style.display="none";
+    }
+}
+
+function logout(){
+    if(confirm("Are you sure you want to logout?")){
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.href = "index.html";
+}
+}
+loadNavbarUser();
+</script>
+<script src="js/voice-assistant.js"></script>
+</body>
+</html>

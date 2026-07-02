@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayurveda - Home Remedies & Holistic Care</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Ayurvedam Theme Color Palette */
+      --ayur-forest: #1b4332;
+      --ayur-sage: #40916c;
+      --ayur-mint: #74c69d;
+      --ayur-light-mint: #d8f3dc;
+      --ayur-terracotta: #c86d32;
+      --ayur-copper: #e07a5f;
+      --ayur-gold: #f4a261;
+      --ayur-turmeric: #e9c46a;
+      --ayur-sandalwood: #8b6a3a;
+      --ayur-earth: #2b2118;
+      --ayur-cream: #fdfbf7;
+      --ayur-sand: #f4ede2;
+      --card-glass: rgba(255, 255, 255, 0.82);
+      --card-border: rgba(64, 145, 108, 0.25);
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+/* TOP LOGO */
+.site-logo{
+    position:fixed;
+    top:25px;
+    left:35px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:#ffffff;
+    font-family:'Cinzel Decorative',serif;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+    z-index:1000;
+    transition:.3s;
+}
+
+.site-logo i{
+    color:#A8D672;
+    font-size:22px;
+}
+
+.site-logo:hover{
+    color:#D7B56D;
+}
+
+/* GET STARTED BUTTON */
+.get-started-btn{
+    position:fixed;
+    top:22px;
+    right:35px;
+    padding:12px 28px;
+    background:#0f4f0ccf;
+    color:#f9f9f9;
+    text-decoration:none;
+    font-family:'Poppins',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    border:0.7px solid rgb(254, 254, 253);
+    border-radius:50px;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+    transition:.3s;
+    z-index:1000;
+}
+
+.get-started-btn:hover{
+    background:#D7B56D;
+    color:#ffffff;
+    transform:translateY(-3px);
+  }
+
+    html, body { 
+      font-family: 'Poppins', sans-serif; 
+      scroll-behavior: smooth; 
+      width: 100%; 
+      background-color: var(--ayur-cream);
+      color: var(--ayur-earth);
+      overflow-x: hidden;
+    }
+
+    /* Headings & Brand Typography */
+    h1, h2, h3, .section-title, .login-box h2, .brand-logo { 
+      font-family: 'Cinzel Decorative', serif; 
+      letter-spacing: 1.5px;
+    }
+
+    /* Body & UI Typography */
+    p{
+      font-family: 'Poppins', sans-serif; 
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--ayur-sand);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--ayur-sage);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--ayur-forest);
+    }
+
+    /* General Sections */
+    section { 
+      width: 100%; 
+      min-height: 100vh; 
+      padding: 110px 40px 60px; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Reveal on Scroll Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Landing Page (#home) */
+    .landing { 
+      background: linear-gradient(135deg, rgba(27, 67, 50, 0.65), rgba(43, 33, 24, 0.75)), url('images/landing.png') no-repeat center center/cover;
+      background-color: var(--ayur-forest); /* Elegant fallback if image missing */
+      color: #fff; 
+      text-align: center;
+      padding: 0 20px;
+    }
+    .landing-content {
+      max-width: 900px;
+      z-index: 2;
+      animation: heroFadeIn 1.4s ease-out;
+    }
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: scale(0.95) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .landing h1 { 
+      font-size: clamp(3.5em, 8vw, 6.5em); 
+      text-shadow: 0 4px 25px rgba(0,0,0,0.6); 
+      font-weight: 700; 
+      letter-spacing: 6px; 
+      margin-bottom: 16px;
+      background: linear-gradient(to right, #ffffff, var(--ayur-turmeric));
+      background-clip:text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .landing-tagline {
+      font-size: clamp(1.2em, 2.5vw, 1.8em);
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: var(--ayur-light-mint);
+      margin-bottom: 35px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    /* Intro Section (#intro) */
+    #intro { 
+      background: linear-gradient(135deg, rgba(27, 67, 50, 0.65), rgba(43, 33, 24, 0.75)), url('images/intro.png') no-repeat center center/cover;
+      background-color: #0e2819;
+      color: white; 
+    }
+    .section-title { 
+      font-size: clamp(2.2em, 5vw, 3em); 
+      margin-bottom: 30px; 
+      color: var(--ayur-forest);
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    #intro .section-title {
+      color: var(--ayur-turmeric);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    
+    #intro .section-title::after {
+      color: var(--ayur-mint);
+    }
+    .text-content { 
+      max-width: 1000px; 
+      font-size: 1.15em; 
+      text-align: center; 
+      line-height: 1.8;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+
+    .intro-actions{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.primary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 35px;
+    background:#af2e667a;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(18,60,47,.18);
+}
+
+.primary-btn:hover{
+    background:#2e8b57;
+    transform:translateY(-3px);
+}
+
+    #about { 
+      background: linear-gradient(135deg, rgba(27, 67, 50, 0.65), rgba(43, 33, 24, 0.75)) , url('images/about.png') no-repeat center center/cover;
+      background-color: var(--ayur-earth);
+      color: rgb(15, 9, 9);
+      justify-content: flex-start;
+      padding-top: 90px;
+    }
+
+    #about .section-title {
+      color: #e6bf3f;;
+    }
+    
+    /* About Section Box */
+    #about .about-box { 
+      background: rgba(1, 40, 15, 0.249); 
+      backdrop-filter: blur(12px); 
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(233, 196, 106, 0.3);
+      border-radius: 24px; 
+      padding: 45px 35px; 
+      max-width: 750px; 
+      text-align: center; 
+      color: rgb(249, 249, 249); 
+      font-size: 1.30em; 
+      line-height: 2;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      nav { padding: 12px 16px; }
+      .nav-links { gap: 12px; font-size: 13px; }
+      section { padding: 90px 20px 40px; }
+      .landing h1 { letter-spacing: 2px; }
+      .text-content, #about .about-box { padding: 25px 20px; }
+    }
+  </style>
+</head>
+<body>
+<body>
+
+    <!-- Logo -->
+    <a href="#home" class="site-logo">
+        <i class="fa-solid fa-leaf"></i> AYURVEDA
+    </a>
+
+    <!-- Get Started Button -->
+    <a href="login.html" class="get-started-btn">
+        Get Started
+    </a>
+
+    <!-- Landing Section -->
+    <section id="home" class="landing">
+        <div class="landing-content">
+            <h1>Ayurveda</h1>
+            <p class="landing-tagline">
+                Explore Ayurvedic remedies, voice-guided assistance, skin & hair care, and natural wellness for a healthier lifestyle.
+            </p>
+        </div>
+    </section>
+
+  <!-- Intro Section -->
+  <section id="intro">
+    <div class="reveal">
+      <h2 class="section-title">Get Better With Ayurvedam</h2>
+      <div class="text-content">
+        <p>Ayurveda is an ancient system of natural healing that has supported health and wellness for centuries. Its remedies focus on maintaining harmony between the mind, body, and soul through herbs, balanced nutrition, and healthy lifestyle practices, promoting overall well-being.<br><br>
+           Ayurvedic herbs are valued for their natural therapeutic, antioxidant, and antibacterial properties. Widely used for generations, they help support everyday wellness and are often chosen<br> as a natural approach to managing common health concerns <br>while encouraging a balanced and healthy lifestyle.
+        </p>
+      </div>
+        <div class="intro-actions">
+          <a href="login.html" class="primary-btn">
+           🌿Explore Remedies
+           </a>
+        </div>
+      </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="reveal">
+      <h1 class="section-title">About Us</h1>
+      <div class="about-box">
+        <p>We are dedicated to promoting holistic health and wellness through the timeless principles of Ayurveda. Our mission is to provide pure natural remedies and lifestyle guidance to help you achieve balance and vitality.<br><br>
+        <p style="font-size:1.0em; opacity:0.8;">❀ Thank you for visiting our page ❀</p>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Reveal elements on scroll
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 120;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayurveda Sign-up/Login</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(rgba(8,30,20,.65),rgba(8,30,20,.65)),
+url("images/login.png");
+background-size:cover;
+background-position:center;
+}
+
+.container{
+    width:900px;
+    max-width:95%;
+    display:flex;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(3, 3, 3, 0.25);
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.container:hover{
+    transform:translateY(-3px);
+    transition:.3s;
+}
+
+.left{
+    width:45%;
+    background:rgba(8, 58, 39, 0.55);
+    backdrop-filter:blur(8px);
+    color:white;
+    padding:50px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.left h1{
+font-family: 'Cinzel Decorative', serif;
+font-size:43px;
+margin-bottom:20px;
+}
+
+.left p{
+line-height:1.8;
+opacity:.9;
+}
+
+.right{
+    width:55%;
+    padding:50px;
+    background:rgba(247, 250, 249, 0.415);
+    backdrop-filter:blur(15px);
+}
+
+.form-title{
+font-size:32px;
+font-weight:700;
+font-family: 'Cinzel Decorative', serif;
+color:#1a5339;
+margin-bottom:30px;
+text-align:center;
+
+}
+
+.input-group{
+margin-bottom:18px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:8px;
+font-weight:600;
+color:#00000086;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:1px solid rgba(255,255,255,.4);
+    background:rgb(252, 251, 251);
+    backdrop-filter:blur(8px);
+    color:#1b5543;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+.input-group input:focus{
+border-color:#171817;
+}
+
+.btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:50px;
+background:#1d583d;
+color:white;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+margin-top:10px;
+}
+
+.btn:hover{
+background:#289467;
+}
+
+.switch{
+margin-top:25px;
+text-align:center;
+}
+
+.switch a{
+color:#2f7b57;
+font-weight:600;
+cursor:pointer;
+text-decoration:none;
+}
+
+#signupForm{
+display:none;
+}
+
+@media(max-width:850px){
+
+.container{
+flex-direction:column;
+}
+
+.left,.right{
+width:100%;
+}
+
+.left{
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+<h1>🌿AYURVEDA</h1>
+<p>
+Welcome to Ayurveda.
+
+Sign in to explore Ayurvedic remedies with natural home ingredients,
+voice-assisted wellness guidance.
+</p>
+</div>
+
+<div class="right">
+<!-- LOGIN -->
+<div id="loginForm">
+<h2 class="form-title">
+Login to Explore Remedies
+</h2>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" id="loginEmail">
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" id="loginPassword">
+</div>
+
+<button class="btn" onclick="loginUser()">
+Login
+</button>
+
+<div class="switch">
+Don't have an account?
+<a onclick="showSignup()">
+Create Account
+</a>
+</div>
+</div>
+
+<!-- SIGNUP -->
+<div id="signupForm">
+<h2 class="form-title">
+Create Account
+</h2>
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" id="signupName">
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" id="signupEmail">
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" id="signupPassword">
+</div>
+
+<button class="btn" onclick="signupUser()">
+Sign Up
+</button>
+
+<div class="switch">
+Already have an account?
+<a onclick="showLogin()">
+Login
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+
+// Show Sign Up Form
+function showSignup() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("signupForm").style.display = "block";
+}
+
+// Show Login Form
+function showLogin() {
+    document.getElementById("signupForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+}
+
+// Create Account
+async function signupUser() {
+
+    const name = document.getElementById("signupName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim();
+    const password = document.getElementById("signupPassword").value;
+
+    if (name === "" || email === "" || password === "") {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    try {
+
+        const response = await fetch("http://localhost:5000/api/users/register", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                name,
+                email,
+                password
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+
+            alert("Account created successfully!");
+
+            showLogin();
+
+        } else {
+
+            alert(data.message);
+
+        }
+
+    } catch (error) {
+
+        alert("Unable to connect to server.");
+
+        console.error(error);
+
+    }
+
+}
+
+// Login
+async function loginUser() {
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    if (email === "" || password === "") {
+        alert("Please enter email and password.");
+        return;
+    }
+
+    try {
+
+        const response = await fetch("http://localhost:5000/api/users/login", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                email,
+                password
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+
+            // Save JWT token
+            localStorage.setItem("token", data.token);
+
+            // Save logged-in user
+            localStorage.setItem("user", JSON.stringify(data.user));
+
+            alert("Login Successful!");
+
+            window.location.href = "remedies.html   ";
+
+        } else {
+
+            alert(data.message);
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Unable to connect to server.");
+
+    }
+
+}
+</script>
+
+</body>
+
+</html>

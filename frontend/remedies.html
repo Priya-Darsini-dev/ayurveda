@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayurveda | Remedies</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+body.remedies-page{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:
+    url("images/bg.png") center/cover fixed;
+    color:#123c2f;
+}
+
+/* ---------- Header ---------- */
+.remedies-header{
+    padding:15px 20px 30px;
+    text-align:center;
+    background:transparent;
+    color:#fff;
+}
+
+/* ---------- Cards ---------- */
+.category-container{
+    width:min(1200px,95%);
+    margin:25px auto 60px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.category-card{
+    background:linear-gradient(rgba(3, 38, 27, 0.474));
+    border-radius:22px;
+    border-color: rgb(226, 225, 224);
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.category-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 55px rgba(0,0,0,.15);
+}
+
+.category-card h2{
+    margin:25px;
+    margin-bottom:10px;
+    color:#d7e1de;
+    font-size:25px;
+    font-family: 'Poppins',sans-serif;
+}
+
+.category-card p{
+    margin:0 25px;
+    color:#f1f0ee;
+    line-height:1.8;
+    min-height:95px;
+}
+
+/* ---------- Button ---------- */
+.category-btn{
+    display:inline-block;
+    margin:30px 25px;
+    padding:14px 30px;
+    background:#2f7b57;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.category-btn:hover{
+    background:#123c2f;
+    transform:translateY(-3px);
+}
+
+/* ---------- Mobile ---------- */
+@media(max-width:768px){
+.remedies-header h1{
+font-size:42px;
+}
+}
+
+.hero-card{
+    width:min(780px,90%);
+    margin:0 auto 10px;
+    margin-top: 95px;
+    padding:35px 45px;
+    background:rgba(11,63,25,.45);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+    text-align:center;
+}
+
+.hero-card h1{
+    margin:0 0 18px;
+    font-size:60px;
+    color:#042c03;
+    font-family:'Cinzel Decorative',serif;
+    letter-spacing:2px;
+}
+
+.hero-card p{
+    margin:0;
+    color:#f3f3f3;
+    font-size:19px;
+    line-height:1.8;
+    max-width:650px;
+    margin:auto;
+}
+
+h1,
+.section-title,
+.login-box h2,
+.brand-logo{
+    font-family:'Cinzel Decorative',serif;
+    letter-spacing:1.5px;
+}
+</style>
+</head>
+
+<body class="remedies-page">
+<header class="remedies-header">
+
+<nav class="navbar">
+
+    <a href="remedies.html" class="logo">
+        <i class="fa-solid fa-leaf"></i> AYURVEDA
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="remedies.html" class="active">Home</a></li>
+        <li><a href="health.html">Health Care</a></li>
+        <li><a href="skin.html">Skin Care</a></li>
+        <li><a href="hair.html">Hair Care</a></li>
+    </ul>
+
+    <div class="nav-right">
+
+    <button id="voiceBtn" class="voice-btn" title="Voice Assistant">
+    <i class="fa-solid fa-microphone-lines"></i>
+</button>
+<button id="stopVoice" class="voice-btn">
+    <i class="fa-solid fa-stop"></i>
+</button>
+
+<div id="voiceStatus" class="voice-status"></div>
+
+    <div class="profile-menu">
+
+    <button class="profile-btn" onclick="toggleProfileMenu()">
+    <span class="profile-avatar" id="profileAvatar"></span>        
+    <span class="profile-arrow">▼</span>
+    </button>
+
+    <div class="profile-dropdown" id="profileDropdown">
+        <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+            My Profile
+        </a>
+
+        <a href="#" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+    </div>
+</div>
+</div>
+</nav>
+
+<div class="hero-card">
+    <h2>
+        Choose a wellness category and discover Ayurvedic remedies for a healthier lifestyle. Explore natural solutions for Health Care, Skin Care and Hair Care.
+    <h2>
+</div>
+</header>
+
+<section class="category-container">
+<div class="category-card">
+<h2>Health Care</h2>
+<p>
+Natural remedies for common illnesses,
+digestive health, fever, cough,
+pain relief and everyday wellness.
+</p>
+<a href="health.html" class="category-btn">
+Explore →
+</a>
+</div>
+
+<div class="category-card">
+<h2>Skin Care</h2>
+<p>
+Explore natural solutions for acne,
+pigmentation, glowing skin,
+dryness and healthy skincare.
+</p>
+
+<a href="skin.html" class="category-btn">
+Explore →
+</a>
+</div>
+<div class="category-card">
+<h2>Hair Care</h2>
+<p>
+Ayurvedic remedies for hair growth,
+hair fall, dandruff,
+premature greying and scalp health.
+</p>
+<a href="hair.html" class="category-btn">
+Explore →
+</a>
+</div>
+</section>
+
+<script>
+const stopBtn=document.getElementById("stopVoice");
+
+stopBtn.addEventListener("click",()=>{
+
+    speechSynthesis.cancel();
+
+    recognition.abort();
+
+    voiceStatus.classList.remove("show");
+
+});
+function loadNavbarUser() {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user) return;
+
+    const words = user.name.trim().split(" ");
+
+    let initials = "";
+
+    words.forEach(word => {
+        initials += word[0];
+    });
+
+    document.getElementById("profileAvatar").innerText =
+        initials.toUpperCase();
+
+}
+
+function toggleProfileMenu(){
+    const menu=document.getElementById("profileDropdown");
+    if(menu.style.display==="block"){
+        menu.style.display="none";
+    }else{
+        menu.style.display="block";
+    }
+
+}
+
+window.onclick=function(e){
+    if(!e.target.closest(".profile-menu")){
+        document.getElementById("profileDropdown").style.display="none";
+    }
+}
+
+function logout(){
+    if(confirm("Are you sure you want to logout?")){
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.href="index.html";
+
+    }
+
+}
+loadNavbarUser();
+</script>
+<script src="js/voice-assistant.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda | Health Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+.title h1{
+    font-family:"Cinzel Decorative",serif;
+    font-size:35px;
+    color: black;
+    margin-top: 85px;
+    margin-bottom:18px;
+    text-align: center;
+}
+
+.title p{
+    color:#121b17;
+    font-size:17px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cards{
+    width:95%;
+    max-width:1700px;
+    margin:20px auto 60px;
+    display:grid;
+    grid-template-columns:repeat(4,220px);
+    justify-content:center;
+    gap:70px;
+}
+
+.card{
+    background:#032e168b;
+    border:1px solid #0a3507;
+    border-radius:22px;
+    padding:22px 20px;
+    width:220px;
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    box-shadow:0 8px 20px rgba(18,60,47,.08);
+    transition:all .3s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(18,60,47,.15);
+    border-color:#8fb79a;
+}
+
+.card h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1.5px;
+    color:#ffffff;
+    font-size:22px;
+    margin-bottom:12px;
+    text-align:center;
+}
+
+.card p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#c6dad4;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.card a{
+    display:inline-flex;
+    font-family:'Poppins', sans-serif;
+    align-self:center;
+    padding:8px 18px;
+    background:#123c2f;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.card a:hover{
+    background:#2e8b57;
+}
+   
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    background: url("images/bg.png") center/cover fixed no-repeat;
+   }
+
+@media(max-width:1400px){
+    .cards{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:900px){
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .cards{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+    <nav class="navbar">
+    <a href="remedies.html" class="logo">
+        <i class="fa-solid fa-leaf"></i>
+        AYURVEDA
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="remedies.html">Home</a></li>
+        <li><a href="health.html" class="active">Health Care</a></li>
+        <li><a href="skin.html">Skin Care</a></li>
+        <li><a href="hair.html">Hair Care</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <button id="voiceBtn" class="voice-btn" title="Voice Assistant">
+    <i class="fa-solid fa-microphone-lines"></i>
+</button>
+<button id="stopVoice" class="voice-btn">
+    <i class="fa-solid fa-stop"></i>
+</button>
+
+<div id="voiceStatus" class="voice-status"></div>
+
+        <div class="profile-menu">
+    <button class="profile-btn" onclick="toggleProfileMenu()">
+        <span class="profile-avatar" id="profileAvatar"></span>
+        <span class="profile-arrow">▼</span>
+    </button>
+
+    <div class="profile-dropdown" id="profileDropdown">
+        <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+            My Profile
+        </a>
+
+        <a href="#" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+    </div>
+</div>
+</div>
+</nav>
+
+<div class="title">
+    <h1>HEALTH CARE</h1>
+    <p>Natural Ayurvedic remedies for everyday health and wellness.</p>
+</div>
+
+<section class="cards">
+<div class="card">
+<h2>Toothache</h2>
+<p>Natural Ayurvedic remedies to help relieve tooth pain, reduce inflammation and support oral health.</p>
+<a href="remedy-pages/page41.html">Explore →</a>
+</div>
+
+<div class="card">
+<h2>Sore Throat</h2>
+<p>Traditional herbal remedies that help soothe throat irritation, reduce discomfort and support recovery.</p>
+<a href="remedy-pages/page42.html">Explore →</a>
+</div>
+
+<div class="card">
+<h2>Nausea</h2>
+<p>Simple Ayurvedic home remedies to ease nausea, improve digestion and provide natural relief.</p>
+<a href="remedy-pages/page43.html">Explore →</a>
+</div>
+
+<div class="card">
+<h2>Sunstroke</h2>
+<p>Cooling Ayurvedic remedies that help reduce body heat, prevent dehydration and restore energy.</p>
+<a href="remedy-pages/page44.html">Explore →</a>
+</div>
+
+<div class="card">
+<h2>Fever</h2>
+<p>Natural remedies that support recovery, boost immunity and help manage mild fever symptoms.</p>
+<a href="remedy-pages/page45.html">Explore →</a>
+</div>
+
+<div class="card">
+<h2>Cold & Cough</h2>
+<p>Herbal remedies that help relieve cough, nasal congestion and improve respiratory comfort.</p>
+<a href="remedy-pages/page46.html">Explore →</a>
+</div>
+
+<div class="card">
+<h2>Indigestion</h2>
+<p>Ayurvedic solutions to improve digestion, reduce bloating and support a healthy digestive system.</p>
+<a href="remedy-pages/page47.html">Explore →</a>
+</div>
+
+<div class="card">
+<h2>Muscle & Joint Pain</h2>
+<p>Natural herbal remedies that help ease pain, stiffness and improve flexibility and mobility.</p>
+<a href="remedy-pages/page48.html">Explore →</a>
+</div>
+
+<div class="card">
+<h2>Loss of Appetite</h2>
+<p>Traditional remedies that stimulate appetite, improve digestion and restore overall wellness.</p>
+<a href="remedy-pages/page49.html">Explore →</a>
+</div>
+
+<div class="card">
+<h2>Menstrual Pain</h2>
+<p>Ayurvedic remedies that help relieve cramps, promote hormonal balance and improve comfort.</p>
+<a href="remedy-pages/page50.html">Explore →</a>
+</div>
+</section>
+
+<script>
+    const stopBtn=document.getElementById("stopVoice");
+
+stopBtn.addEventListener("click",()=>{
+
+    speechSynthesis.cancel();
+
+    recognition.abort();
+
+    voiceStatus.classList.remove("show");
+
+});
+function loadNavbarUser() {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user) return;
+
+    const words = user.name.trim().split(" ");
+
+    let initials = "";
+
+    words.forEach(word => {
+        initials += word[0];
+    });
+
+    document.getElementById("profileAvatar").innerText =
+        initials.toUpperCase();
+
+}
+function toggleProfileMenu(){
+    const menu=document.getElementById("profileDropdown");
+    if(menu.style.display==="block"){
+        menu.style.display="none";
+    }else{
+        menu.style.display="block";
+    }
+}
+
+window.onclick=function(e){
+    if(!e.target.closest(".profile-menu")){
+        document.getElementById("profileDropdown").style.display="none";
+    }
+}
+
+function logout(){
+    if(confirm("Are you sure you want to logout?")){
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.href = "index.html";
+}
+}
+loadNavbarUser();
+</script>
+<script src="js/voice-assistant.js"></script>
+</body>
+</html>

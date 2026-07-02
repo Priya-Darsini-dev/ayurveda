@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ayurveda | My Account</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+ 
+ <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.back-btn{
+    position:absolute;
+    top:30px;
+    left:30px;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:12px 22px;
+
+    background:rgba(69, 135, 41, 0.534);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(202, 193, 193, 0.693);
+    border-radius:50px;
+
+    color:#eeeaea;
+    text-decoration:none;
+    font-family:'Poppins',sans-serif;
+    font-size:15px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.back-btn:hover{
+    background:#26972aa1;
+    color:#ffffff;
+    transform:translateX(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+.back-btn i{
+    font-size:14px;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    font-family:'Poppins',sans-serif;
+
+    background:
+        radial-gradient(circle at 85% 15%,
+            rgba(216,181,106,.75),
+            rgba(216,181,106,.18) 22%,
+            transparent 45%),
+
+        radial-gradient(circle at 75% 55%,
+            rgba(143,183,154,.25),
+            transparent 40%),
+
+        linear-gradient(
+            135deg,
+            #02380a 0%,
+            #1c4228 35%,
+            #295f38 70%,
+            #37a948 100%
+        );
+}
+
+.profile-card{
+    width:520px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 25px 60px rgba(0,0,0,.22);
+}
+
+.avatar{
+    width:95px;
+    height:95px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#84df9e,#f3d697);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:34px;
+    font-weight:700;
+    color:#123c2f;
+}
+
+h1{
+    text-align:center;
+    color:#123c2f;
+    font-family:'Cinzel Decorative',serif;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#5d675f;
+    margin-bottom:30px;
+    font-size:13px;
+}
+
+.info-box{
+    background:rgba(236, 230, 230, 0.153);
+    border-radius:14px;
+    padding:14px 18px;
+    margin-bottom:16px;
+    backdrop-filter:blur(8px);
+}
+
+.info-box label{
+    font-size:13px;
+    font-weight:600;
+    color:#23402d;
+}
+
+.info-box p{
+    font-size:13px;
+    color:#111;
+}
+
+.actions{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:28px;
+}
+
+.actions button{
+    border:none;
+    border-radius:12px;
+    padding:12px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.edit-btn{
+    background:#d1457ae0;
+    color:#ecdfe2;
+}
+
+.edit-btn:hover{
+    background:#c87081;
+    color:#ede6e8;
+    transform:translateY(-2px);
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.modal-box{
+    width:340px;
+    background:#fffdf8;
+    border-radius:22px;
+    padding:25px;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.modal-box h2{
+    text-align:center;
+    color:#123c2f;
+    margin-bottom:20px;
+    font-family:"Cinzel Decorative",serif;
+    font-size:24px;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:6px;
+    color:#555;
+    font-size:13px;
+}
+
+.input-group input{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:12px;
+    outline:none;
+}
+
+.input-group input:focus{
+    border-color:#06240d;
+}
+
+.modal-buttons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+.cancel-btn{
+    background:#836f10;
+    color:#fffefe;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cancel-btn:hover{
+    background:#d2c534;
+}
+
+.save-btn{
+    background:#1d7937;
+    color:#fff;
+    border:none;
+    padding:10px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.save-btn:hover{
+    background:#349d62;
+    color: white;
+}
+
+.logout-btn{
+    background:#dbc432ed;
+    color: white;
+}
+
+.logout-btn:hover{
+    background:#e9e25e;
+    color:#fdfdfdcb;
+    transform:translateY(-2px);
+}
+
+.delete-btn{
+    background:#c53e3c;
+    color:#fff;
+}
+
+.delete-btn:hover{
+    background:#bb6968;
+    transform:translateY(-2px);
+}
+
+.success-msg{
+    display:none;
+    margin:15px 0;
+    padding:10px;
+    text-align:center;
+    background:#dff5e4;
+    color:#1b5e20;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:600;
+}
+    </style>
+</head>
+
+<body>
+
+    <a href="remedies.html" class="back-btn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+</a>
+
+<div class="profile-card">
+
+    <div class="avatar" id="avatar">
+    PD
+</div>
+
+   <div class="info-box">
+    <label>Full Name</label>
+    <p id="userName">
+        Priya Darshini
+    </p>
+</div>
+
+<div class="info-box">
+    <label>Email</label>
+    <p id="userEmail">
+        priya@gmail.com
+    </p>
+</div>
+
+    <div class="actions">
+        <button class="edit-btn" onclick="openModal()">
+    Edit Profile
+</button>
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+        <button class="delete-btn" onclick="deleteAccount()">
+    Delete Account
+</button>
+</div>
+</div>
+
+<div id="editModal" class="modal">
+
+    <div class="modal-box">
+        <h2>Edit Profile</h2>
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" id="editName">
+        </div>
+
+        <p id="successMsg" class="success-msg">
+    ✔ Profile updated successfully!
+</p>
+
+        <div class="modal-buttons">
+            <button class="cancel-btn" onclick="closeModal()">
+                Cancel
+            </button>
+
+            <button class="save-btn" onclick="saveProfile()">
+                Save
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+loadUser();
+function loadUser() {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user) {
+        alert("Please login first.");
+        window.location.href = "login.html";   // Change this if your login page has another name
+        return;
+    }
+
+    document.getElementById("userName").innerText = user.name;
+    document.getElementById("userEmail").innerText = user.email;
+
+    // Generate initials
+    const words = user.name.trim().split(" ");
+
+    let initials = "";
+
+    words.forEach(word => {
+        initials += word[0];
+    });
+
+    document.getElementById("avatar").innerText = initials.toUpperCase();
+
+}
+
+loadUser();
+
+function openModal() {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    document.getElementById("editName").value = user.name;
+
+    document.getElementById("editModal").style.display = "flex";
+
+}
+
+function closeModal(){
+    document.getElementById("editModal").style.display="none";
+}
+
+async function saveProfile() {
+
+    const name = document.getElementById("editName").value.trim();
+
+    if (name === "") {
+        alert("Name cannot be empty.");
+        return;
+    }
+
+    try {
+
+        const token = localStorage.getItem("token");
+
+        const response = await fetch("http://localhost:5000/api/users/profile", {
+
+            method: "PUT",
+
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            },
+
+            body: JSON.stringify({
+                name: name
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+
+            // Update localStorage
+            localStorage.setItem("user", JSON.stringify(data.user));
+
+            // Update profile page
+            document.getElementById("userName").innerText = data.user.name;
+
+            // Update avatar initials
+            const words = data.user.name.trim().split(" ");
+
+            let initials = "";
+
+            words.forEach(word => {
+                initials += word[0];
+            });
+
+            document.getElementById("avatar").innerText =
+                initials.toUpperCase();
+
+            document.getElementById("successMsg").style.display = "block";
+
+            setTimeout(() => {
+                document.getElementById("successMsg").style.display = "none";
+                closeModal();
+            }, 1500);
+
+        } else {
+
+            alert(data.message);
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Unable to update profile.");
+
+    }
+
+}
+
+function logout() {
+
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+
+    window.location.replace("index.html");
+
+}
+
+async function deleteAccount() {
+
+    const confirmDelete = confirm("Are you sure you want to delete your account?");
+
+    if (!confirmDelete) return;
+
+    try {
+
+        const token = localStorage.getItem("token");
+
+        const response = await fetch("http://localhost:5000/api/users/profile", {
+
+            method: "DELETE",
+
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+
+            alert(data.message);
+
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+
+            window.location.href = "index.html";
+
+        } else {
+
+            alert(data.message);
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Unable to delete account.");
+
+    }
+
+}
+</script>
