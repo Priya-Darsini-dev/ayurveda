@@ -194,7 +194,8 @@ Add screenshots of:
 - Home Page
 
   <img width="1896" height="857" alt="image" src="https://github.com/user-attachments/assets/af992061-3c93-4322-8b96-0050d8b91309" />
-  ![Uploading image.png…]()
+  <img width="1902" height="865" alt="image" src="https://github.com/user-attachments/assets/d4792b45-9b2a-4117-b7b5-5cd0f9a7d6dd" />
+
 - Login
   
   <img width="1912" height="866" alt="image" src="https://github.com/user-attachments/assets/0fba69b4-2557-498e-ba2a-e4236f6be6f6" />
