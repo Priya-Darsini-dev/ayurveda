@@ -192,20 +192,29 @@ Read Remedy Using Speech Synthesis
 Add screenshots of:
 
 - Home Page
+
   <img width="1896" height="857" alt="image" src="https://github.com/user-attachments/assets/af992061-3c93-4322-8b96-0050d8b91309" />
+  ![Uploading image.png…]()
 - Login
+  
   <img width="1912" height="866" alt="image" src="https://github.com/user-attachments/assets/0fba69b4-2557-498e-ba2a-e4236f6be6f6" />
 - Signup
+  
   <img width="1917" height="853" alt="image" src="https://github.com/user-attachments/assets/13034e1d-8c71-4ae7-9b04-9f0e225a269e" />
 - Remedies
+  
   <img width="1897" height="857" alt="image" src="https://github.com/user-attachments/assets/1790381d-5d4a-4886-9a64-4f4585b12e6b" />
 - Health Care
+  
 <img width="1910" height="856" alt="image" src="https://github.com/user-attachments/assets/668351cf-f730-4b23-80ee-fd5e5b1a347f" />
--Skin Care
+- Skin Care
+  
 <img width="1915" height="852" alt="image" src="https://github.com/user-attachments/assets/23c20aa4-672a-4d6e-b1cb-56c845d28efa" />
--Health Care
+- Health Care
+  
 <img width="1918" height="862" alt="image" src="https://github.com/user-attachments/assets/981a53ee-de2b-40bc-bad3-9e4ae4c2378a" />
 - Profile
+  
 <img width="1917" height="858" alt="image" src="https://github.com/user-attachments/assets/3fa7db30-5362-45e3-869b-e5d3c4d48cbe" />
 
 ---
