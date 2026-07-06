@@ -4,6 +4,13 @@ Ayurvedam is a full-stack web application that helps users discover traditional 
 
 ---
 
+## 🌐 Live Demo
+
+**Website:** https://ayurveda-wellness.vercel.app
+
+**Backend API:** https://ayurveda-fo4e.onrender.com
+
+
 ## ✨ Features
 
 ### 👤 User Authentication
@@ -180,84 +187,30 @@ Read Remedy Using Speech Synthesis
 
 ---
 
-# 🚀 Installation
-
-## Clone Repository
-
-```bash
-git clone https://github.com/yourusername/ayurvedam.git
-```
-
----
-
-## Backend Setup
-
-```bash
-cd backend
-npm install
-```
-
-Create a `.env` file.
-
-```env
-PORT=5000
-MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
-JWT_SECRET=YOUR_SECRET_KEY
-```
-
-Run the backend.
-
-```bash
-npm start
-```
-
-or
-
-```bash
-node server.js
-```
-
----
-
-## Seed Database
-
-```bash
-node seeder.js
-```
-
----
-
-## Frontend
-
-Open the frontend folder using VS Code.
-
-Run using **Live Server**.
-
----
-
 # 📷 Screenshots
 
 Add screenshots of:
 
 - Home Page
+  <img width="1896" height="857" alt="image" src="https://github.com/user-attachments/assets/af992061-3c93-4322-8b96-0050d8b91309" />
 - Login
+  <img width="1912" height="866" alt="image" src="https://github.com/user-attachments/assets/0fba69b4-2557-498e-ba2a-e4236f6be6f6" />
 - Signup
+  <img width="1917" height="853" alt="image" src="https://github.com/user-attachments/assets/13034e1d-8c71-4ae7-9b04-9f0e225a269e" />
 - Remedies
-- Voice Assistant
+  
 - Profile
-- Dynamic Remedy Page
+
 
 ---
 
 # 🔮 Future Enhancements
 
 - Multi-language Support
-- AI Chatbot Integration
+- Intelligent Health Assistant
 - Personalized Remedy Recommendations
 - Appointment Booking
 - Doctor Consultation
-- Mobile Application
-- Dark Mode
 
 ---
 
@@ -280,7 +233,6 @@ Add screenshots of:
 
 B.Tech - Computer Science and Engineering (Artificial Intelligence)
 
-PSCMR College of Engineering and Technology
 
 ---
 
