@@ -3,7 +3,7 @@ async function loadRemedy(remedyTitle) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/remedies/title/${encodeURIComponent(remedyTitle)}`
+            `https://ayurveda-fo4e.onrender.com/api/remedies/title/${encodeURIComponent(remedyTitle)}`
         );
 
         if (!response.ok) {

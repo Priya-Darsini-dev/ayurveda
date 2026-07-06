@@ -154,7 +154,7 @@ if (!SpeechRecognition) {
 
             const response = await fetch(
 
-                `http://localhost:5000/api/remedies/search?query=${encodeURIComponent(speech)}`
+                `https://ayurveda-fo4e.onrender.com/api/remedies/search?query=${encodeURIComponent(speech)}`
 
             );
 
